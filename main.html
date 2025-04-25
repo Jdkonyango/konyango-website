@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: rgb(133, 42, 42);
+            color: white;
+            animation: fadeIn 5s forwards;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+
+        }
+        .container {
+            padding: 50px;
+            max-width: 800px;
+            margin: auto;
+
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .main-header {
+            background: transparent;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+        }
+        
+        .top-section {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background: #f3f3f3;
+        }
+        
+        .profile {
+            float: left;
+        }
+        
+        .logo {
+            float: right;
+        }
+        
+        nav {
+            background: transparent;
+            padding: 10px;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        nav ul li {
+            color: white;
+            padding: 10px;
+            display: inline-block;
+            position: relative;
+        }
+        
+        .submenu {
+            display: none;
+            position: absolute;
+            list-style: none;
+            padding: 0;
+            top: 100%;
+            left: 0;
+        }
+        
+        .menu-item:hover .submenu {
+            display: block;
+        }
+        
+        .submenu li {
+            padding: 10px;
+            color: white;
+        }
+        .submenu li:hover {
+            background: #555;
+        }
+        
+        header {
+            background-color: grey;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-links {
+            display: flex;
+            gap: 20px;
+        }
+        .header-links a {
+            color: white;
+            text-decoration: none;
+        }
+        .profile-pic {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+        .container {
+            padding: 50px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        
+        <div class="header-links">
+            <a href="#">Home</a>
+            <a href="#">Account</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="logout.html">Logout</a>
+        </div>
+        <!-- Profile Picture & Upload Button -->
+        <div style="position: relative; display: inline-block;">
+            <img id="profilePic" src="default.jpg" alt="Profile Picture" class="profile-pic">
+            <button id="uploadBtn" onclick="document.getElementById('profilePicInput').click()">+</button>
+            <input type="file" id="profilePicInput" accept="image/*" onchange="uploadProfilePic()" style="display: none;">
+        </div>
+       
+        
+            <nav>
+                <ul>
+                    <li class="menu-item">Account Details
+                        <ul class="submenu">
+                            <li>Personal Info</li>
+                            <li>Security</li>
+                            <li>Payment Methods</li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">Settings
+                        <ul class="submenu">
+                            <li>Privacy Settings</li>
+                            <li>Notifications</li>
+                            <li>Language Preferences</li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">Help
+                        <ul class="submenu">
+                            <li>FAQs</li>
+                            <li>Contact Support</li>
+                            <li>Feedback</li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+    </header>
+    
+    <style>
+        .profile-pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        #uploadBtn {
+            position: absolute;
+            top: 30px;
+            right: 5px;
+            background-color: #3b5998;
+            color: white;
+            border: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #uploadBtn:hover {
+            background-color: #2d4373;
+        }
+    </style>
+    
+    <script>
+        function uploadProfilePic() {
+            const fileInput = document.getElementById("profilePicInput");
+            const profilePic = document.getElementById("profilePic");
+    
+            if (fileInput.files.length > 0) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    profilePic.src = e.target.result;
+                    localStorage.setItem("profilePic", e.target.result); // Store image in localStorage
+                };
+                reader.readAsDataURL(fileInput.files[0]);
+            }
+        }
+    
+        // Load saved profile picture from localStorage
+        window.onload = function () {
+            const savedPic = localStorage.getItem("profilePic");
+            if (savedPic) {
+                document.getElementById("profilePic").src = savedPic;
+            }
+        };
+    </script>
+
+
+<script>
+    function startFunction() {
+        alert("Welcome! You have accepted the terms and conditions.");
+    }
+    function loginFunction() {
+        document.body.innerHTML = "<h2>Welcome! Redirecting...</h2>";
+        setTimeout(function () {
+            window.location.href = "login.html";
+        }, 5000); // 5 seconds delay
+    }
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            opacity: 0;
+            animation: fadeIn 5s forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            opacity: 0;
+            animation: fadeIn 5s forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome, <span id="username"></span>!</h1>
+    <p>Take a look at my projects and achievements.</p>
+
+    <script>
+        // Retrieve user's name from localStorage or sessionStorage
+        const userName = localStorage.getItem("userName") || "Guest";
+        document.getElementById("username").textContent = userName;
+    </script>
+    <div class="container">
+        <h2>Past Papers</h2>
+        <p>Test your knowledge! Choose the correct answers.</p>
+    
+        <!-- Sample Quiz -->
+            <button type="button" onclick="validatePayment()">Download Answers</button>
+        </form>
+    
+        <p id="paymentMessage" style="color: red; display: none;">You must complete payment before downloading.</p>
+    </div>
+    
+    <script>
+        function validatePayment() {
+            const paymentDone = localStorage.getItem("paymentStatus");
+    
+            if (paymentDone === "paid") {
+                window.location.href = "paperlink.html"; // Redirect to the PDF file for download
+            } else {
+                document.getElementById("paymentMessage").style.display = "block";
+                alert("Please complete the payment to download the answers.");
+
+                // Optionally, you can redirect to a payment page or show payment options here
+                // Redirect to payment page
+                window.location.href = "payment.html"; // Redirect to the payment page
+
+            }
+        }
+    
+        function processPayment() {
+            alert("Payment successful!");
+            localStorage.setItem("paymentStatus", "paid");
+        }
+    </script>
+    
+    <!-- Simulated Payment Button -->
+    <button onclick="processPayment()">Pay Now</button>
+    <p id="paymentStatus"></p>
+</body>
+</html>
+
+<footer>
+    <p>&copy; 2025 My Website. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

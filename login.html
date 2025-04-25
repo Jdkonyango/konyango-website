@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="Login and Register Page">
+    <meta name="author" content="Konyango Website">
+    <meta name="keywords" content="Login, Register, User Authentication, Responsive Design">
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register</title>
+    <style>
+        /* Add custom styles for the login and register forms */
+        .form input:focus {
+            border-color: #007BFF;
+            background: rgba(59, 53, 53, 0.3);
+            color: #fff;
+
+        .form button:active {
+            background: hsl(240, 1%, 81%);
+            transform: scale(0.98);
+        }
+
+        .container::before {
+            content: '';
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(123, 207, 44, 0.5);
+            z-index: -1;
+            border-radius: 25px;
+        }
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    html, body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, #c4c1c7, hwb(218 61% 24%));
+        color: #fff;
+        height: 100vh;
+        max-height: fit-content;
+    }
+    header {
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 30px ;
+            background-color: #0056b3;
+            z-index: 1000;
+            min-height: 30vh;
+        }
+
+        header nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            padding: 10px;
+            border: #11100f;
+            border-radius: 29px;
+        }
+        .form input::placeholder {
+            color: rgb(240, 47, 47);
+        }
+
+        .form input::placeholder:hover {
+            color: rgb(182, 228, 83);
+            text-overflow: clip;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin: auto;
+            list-style: none;
+            border: #6a11cb solid 1px;
+            border-radius: 15px;
+            padding: 10px;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: background-color 0.3s ease;
+            justify-content: space-between;
+            left: 0;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #101111;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 20px ;
+            border-radius: 29px;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #d9e1eb;
+        }
+        body {
+            padding-top: 2px; /* Adjust for fixed header height */
+        }
+        }
+    
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: block;
+            justify-content: center;
+            align-items: center;
+            background: rgb(54, 54, 47);
+            color: #fff;
+        }
+        nav{
+            top: 0;
+            color: white;
+            border: none;
+            height: 100px;
+            background-color: transparent;
+            z-index: 1000;
+
+        }
+
+        .container {
+            display: block;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            border: 2px solid rgba(201, 67, 67, 0.3);
+            background: #1c381c;
+            border-radius: 35px;
+            padding: auto;
+            margin: auto;
+            height: 60vh;
+            background-position: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+        }
+
+        .form {
+            padding: auto;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 70%;
+            text-align: center;
+            text-align: center;
+            margin: auto;
+            top: 978px;
+            height: 50vh;
+            display: none;
+        }
+
+        .form.active {
+            display: block;
+        }
+
+        .form h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #fff;
+        }
+
+        .form input {
+            width: 90%;
+            padding: 10px;
+            margin: 11px 0;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            font-size: 16px;
+            border: #fff solid 1px;
+            border-radius: 20px;
+            background: #c58a8ae0;
+            color: #fff;
+        }
+
+        .form button {
+            width: 50%;
+            padding: 9px;
+            border: 1px solid #6a11cb;
+            border-radius: 25px;
+            background: #4a6786;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .form button:hover {
+            background: #b30036;
+        }
+
+        .toggle-link {
+            margin-top: 15px;
+            color: #0bf775;
+            padding: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: bold;
+            justify-content: space-between;
+            display: block;
+
+        }
+
+        .toggle-link:hover {
+            color: #b30000;
+            text-decoration: underline;
+        }
+        a{
+            font-size: 13px;
+            border: .5px solid rgb(61, 63, 59);
+            border-radius: 33px;
+            padding: 5px;
+            width: 100%;
+            color: white;
+            background-color: transparent;
+        }
+        a:hover{
+            color: white;
+            background-color: black;
+            font-size: 19px;
+            text-decoration: underline;
+            text-overflow: ellipsis;
+            transition: .6s;
+            border: none;
+            border: 1px solid orange ;
+            direction: inherit;
+        }
+    </style>
+</head>
+<header style="display: flex; top: 0; left: 4px; color: white;
+background-color: transparent; align-items: center; justify-content: space-between; border-radius:0px; border-color: rgb(206, 240, 157); ">
+    <div style="text-align: center; margin-bottom: 10px;">
+        <img src="img/profile.jpg.png" alt="Website Logo" style="width: 50px; border-radius: 50px 50px 50px 50px;">
+    </div>
+    <h1 style="text-align: center; font-size: 30px; margin-top: 0px; color:  #ca2525;">Welcome to Our Website</h1>
+    <nav>
+        <ul style="list-style: none; left: 72px; border-color: #2de648;  border-radius: 20px; padding: 20px; display: flex; justify-content: center; gap: 15px;">
+            <li><a href="index.html" style="text-decoration: none; color: #88ff00;">Home</a></li>
+
+            
+
+        </ul>
+    </nav>
+</header>
+<body>
+    <div style="text-align: center;">
+        <h2 style="font-size: 18px; color: #3f10ec;">Please Login or Register to Continue</h2>
+    </div>
+    <div class="container">
+        <div id="loginForm" class="form active">
+            <h2>Login</h2>
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+            <button>Login</button>
+            <div class="toggle-link" onclick="toggleForms()">Don't have an account? Register  <p style="text-align: center;
+            font-size: 10px;
+            color: #ffff;
+            transition: .5s;
+            background-color: transparent; border: none; text-decoration: none; font-size: large;">
+                <a href="forgot_password.html">Forget password</a>
+            </p></div>
+            
+        </div>
+        <div id="forgotPasswordForm" class="form">
+            <h2>Forgot Password</h2>
+            <input type="email" placeholder="Enter your registered email" required>
+            <button>Reset Password</button>
+            <div class="toggle-link" onclick="toggleForms()">Back to Login</div>
+        </div>
+        <div id="registerForm" class="form">
+            <h2>Register</h2>
+            <input type="text" placeholder="Username" minlength="8" required   >
+            <input type="email" placeholder="Email"  minlength="12" required   >
+            <input type="password" placeholder="Password" minlength="8"  required >
+            <button>Register</button>
+            <div class="toggle-link" onclick="toggleForms()">Already have an account? Login</div>
+          
+        </div></div>
+        <footer style="position: relative; justify-content: center; bottom: 0; width: 100%; background-color: transparent; text-align: center; padding: 10px 0;"></footer>
+        <p>&copy; 2025 Konyango Website. All rights reserved.</p>
+    </footer>
+       
+    </div>
+    <script>
+        function toggleForms() {
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+            const forgotPasswordForm = document.getElementById('forgotPasswordForm');
+
+            if (loginForm.classList.contains('active')) {
+                loginForm.classList.remove('active');
+                registerForm.classList.add('active');
+            } else if (registerForm.classList.contains('active')) {
+                registerForm.classList.remove('active');
+                loginForm.classList.add('active');
+            } else if (forgotPasswordForm.classList.contains('active')) {
+                forgotPasswordForm.classList.remove('active');
+                loginForm.classList.add('active');
+            }
+        }
+
+        function checkLogin(username, password) {
+            const registeredUsers = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+
+            const user = registeredUsers.find(user => user.username === username);
+
+            if (user && user.password === password) {
+                alert('Login accepted!');
+                redirectToMain();
+            } else if (user && user.password !== password) {
+                alert('Incorrect password. Redirecting to forgot password page.');
+                window.location.href = 'forgot_password.html';
+            } else {
+                alert('Login denied! Invalid username or password.');
+            }
+        }
+
+        function redirectToMain() {
+            window.location.href = 'main.html';
+            TimeRanges =arguments 
+            toggleForms()
+            document.body.innerHTML = "<h2>Welcome! Redirecting...</h2>";
+                setTimeout(function () {
+                    window.location.href = "main.html";
+                }, 9000);
+        }
+
+        document.querySelector('#loginForm button').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            const username = document.querySelector('#loginForm input[placeholder="Username"]').value;
+            const password = document.querySelector('#loginForm input[placeholder="Password"]').value;
+
+            checkLogin(username, password);
+        });
+
+        document.querySelector('#registerForm button').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            const username = document.querySelector('#registerForm input[placeholder="Username"]').value;
+            const email = document.querySelector('#registerForm input[placeholder="Email"]').value;
+            const password = document.querySelector('#registerForm input[placeholder="Password"]').value;
+
+            const registeredUsers = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+
+            const isAlreadyRegistered = registeredUsers.some(user => user.username === username || user.email === email);
+
+            if (isAlreadyRegistered) {
+                alert('Username or Email is already registered. Please login.');
+            } else {
+                registeredUsers.push({ username, email, password });
+                localStorage.setItem('registeredUsers', JSON.stringify(registeredUsers));
+                alert('Registration successful! You can now login.');
+               
+                toggleForms();
+
+            }
+        });
+
+        document.querySelector('#forgotPasswordForm button').addEventListener('click', function(event) {
+            event.preventDefault();
+
+            const email = document.querySelector('#forgotPasswordForm input[placeholder="Enter your registered email"]').value;
+
+            const registeredUsers = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+            const user = registeredUsers.find(user => user.email === email);
+
+            if (user) {
+                alert('Password reset link has been sent to your email.');
+            } else {
+                alert('Email not found. Please register.');
+            }
+            
+        });
+    </script>  
+
+</body>
+</html>
